@@ -11,7 +11,12 @@ export default {
   components: {
     LifeCycle,
   },
+  //控制fetch是否為SSR
+  fetchOnServer:false,
   //無法取得 window
+  fetch() {
+    console.log(window)
+  },
   created() {
     console.log(window)
   },
