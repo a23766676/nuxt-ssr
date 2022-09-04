@@ -1,6 +1,5 @@
 <template>
-  <div v-if="$fetchState.pending">loading...</div>
-   <div v-else>
+   <div>
     nextPage
     <br />
     asyncData:{{ asyncData.name }}
@@ -9,29 +8,15 @@
     <br />
     createdData:{{ createdData.name }}
     <br />
-    <br />
-    <div>
-      <span>a標籤:</span>
-      <a href="/">上一頁</a>
-    </div>
-    <div>
-      <span>nuxt-link:</span>
-      <nuxt-link to="/">上一頁</nuxt-link>
-    </div>
-    <div>
-      <span>router-link:</span>
-      <router-link to="/">上一頁</router-link>
-    </div>
+    <nuxt-link to="../fetchAsync">fetch與asyncData</nuxt-link>
   </div>
 </template>
 
 <script>
-  import defaultLayout from '../layouts/default.vue';
-// eslint-disable-next-line promise/param-names
 const getData = (t) =>
   new Promise((resovle) => {
     setTimeout(() => {
-      resovle({ name: "tina" });
+      resovle({ name:new Date() });
     }, t);
   });
 export default {
@@ -39,7 +24,6 @@ export default {
   layout: 'none',
   async asyncData() {
     const data = await getData(5000);
-    console.log("pageTwo_asyncData" + new Date());
     return { asyncData: data };
   },
   data() {
@@ -49,18 +33,17 @@ export default {
     };
   },
   async fetch() {
+    console.log("fetch" + new Date());
     this.fetchData = await getData(3000);
     // eslint-disable-next-line no-console
-    console.log("pageTow_fetch");
+    console.log("fetchData" + this.fetchData.name );
     // 有keep alive且共用layout就不會進到fetch
   },
   async created() {
-    this.createdData = await getData(5000);
+    console.log("start_created");
+    this.createdData = await getData(1000);
     // eslint-disable-next-line no-console
-    console.log("pageTow_created");
+    console.log("createdData"+this.createdData.name);
   },
 };
 </script>
-
-<style lang="scss" scoped>
-</style>

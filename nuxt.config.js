@@ -1,7 +1,8 @@
 export default {
-  router: {
-    middleware: ['default']
-  },
+  // ssr:false,
+  // router: {
+  //   middleware: ['default']
+  // },
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: 'nuxt-ssr',
@@ -25,7 +26,7 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
-    './plugins/test',
+    // './plugins/test',
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
