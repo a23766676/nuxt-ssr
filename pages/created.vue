@@ -1,6 +1,6 @@
 <template>
    <div>
-    nextPage
+    created
     <br />
     asyncData:{{ asyncData.name }}
     <br />

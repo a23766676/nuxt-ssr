@@ -5,8 +5,6 @@
     asyncData:{{ asyncData.name }}
     <br />
     fetchData:{{ fetchData.name }}
-    <br />
-    <nuxt-link to="../fetchOnServer">fetchOnServer</nuxt-link>
   </div>
 </template>
 
