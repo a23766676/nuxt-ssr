@@ -2,7 +2,7 @@
   <div>
     元件
     <br />
-    asyncData/middleware/validate:皆無效，因component須為vue組件
+    <!-- asyncData:{{asyncData.name}} -->
     <br />
     fetchData:{{ fetchData.name }}
     <br />
@@ -19,12 +19,12 @@ const getData = (t) =>
   });
 export default {
   name: "LifeCycle",
-  // 只能放在頁面組件上，因component只能為vue組件
-  // async asyncData() {
-  //   const data = await getData(5000);
-  //   console.log("component_asyncData" + new Date());
-  //   return { asyncData: data };
-  // },
+  // 只能放在頁面組件上
+  async asyncData() {
+    const data = await getData(5000);
+    console.log("component_asyncData" + new Date());
+    return { asyncData: data };
+  },
   middleware() {
     console.log("component_middleware");
   },

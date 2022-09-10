@@ -1,6 +1,5 @@
 <template>
-  <div v-if="$fetchState.pending">loading...</div>
-   <div v-else>
+   <div>
     nextPage
     <br />
     asyncData:{{ asyncData.name }}

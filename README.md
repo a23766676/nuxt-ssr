@@ -42,11 +42,14 @@ Tina
 ---
 
 #### asyncData與fetch
-- asyncData執行完才會往下執行fetch、created
+- asyncData return 出來的 data 會 取代原本的 data() 
+- asyncData執行完才會往下執行created、fetch
+- asyncData無法取得this，created、fetch可以
 - 第一次載入伺服器端都會等asyncData及fetch兩個函式都跑完才顯示畫面
 - 但如果是用NUXT-LINK轉頁，就可以明顯看見asyncData跑完才會顯示畫面，但fetch則是先進入畫面後等待非同步結束再把資料渲染出來
-- 可參考`$fetchState.pending`可以加入loading的或`$fetchState.error`加入錯誤畫面
-
+- 可參考`$fetchState.pending`可以加入loading
+- asyncData載入失敗會直接阻止路由
+- `$fetchState.error`加入錯誤畫面
 ---
 
 #### created
@@ -57,8 +60,9 @@ Tina
 ---
 
 #### 服務端
-- 無法拿到客戶端訊息(如:window)
-- 
+- [context參數](https://nuxtjs.org/docs/internals-glossary/context/)
+- 在服務端生命週期中無法拿到客戶端訊息(如:window)
+- 在component元件中不會執行asyncData、middleware、validate
 ---
 
 #### 加入keep alive

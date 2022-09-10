@@ -1,5 +1,6 @@
 <template>
   <div>
+      <nuxt-link to="window">window</nuxt-link>
     <Nuxt />
   </div>
 </template>

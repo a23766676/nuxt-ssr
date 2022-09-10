@@ -1,9 +1,9 @@
 <template>
   <div>
     <br />
-    asyncData:{{ asyncData.name }}
+    asyncData:{{ asyncData }}
     <br />
-    fetchData:{{ fetchData.name }}
+    fetchData:{{ fetchData }}
     <br />
   </div>
 </template>
@@ -11,20 +11,20 @@
 export default {
   name: "IndexPage",
   layout: 'none',
-  async asyncData(context) {
-   context.app.asyncData='context.app.asyncData';
+  asyncData(context) {
+   console.log(context)
   },
   data() {
     return {
       show: true,
-      asyncData:{},
-      fetchData: {},
+      asyncData:'default',
+      fetchData: '',
       createdData: {},
       mountedData: {},
     };
   },
   async fetch(context) {
-   context.app.fetchData='context.app.fetchData';
+   console.log(context)
   },
 };
 </script>

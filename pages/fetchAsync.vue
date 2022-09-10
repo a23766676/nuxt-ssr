@@ -15,16 +15,24 @@ const getData = (t) =>
       resovle({ name:'Tina'});
     }, t);
   });
+  const getError = (t) =>
+  new Promise((resovle,reject) => {
+    setTimeout(() => {
+      reject('error');
+    }, t);
+  });
 export default {
   name: "IndexPage",
   layout: 'none',
   async asyncData() {
     const data = await getData(2000);
+    // const data = await getError(10);
     console.log("asyncData_" + new Date());
     return { asyncData: data };
   },
   data() {
     return {
+      asyncData:{name:'default'},
       show: true,
       fetchData: {},
       createdData: {},
@@ -32,6 +40,7 @@ export default {
     };
   },
   async fetch() {
+    console.log(this);
     console.log("startfetch_"+ new Date());
     this.fetchData = await getData(3000);
     console.log("fetchData_" + new Date());
