@@ -60,12 +60,14 @@ Tina
 ---
 
 #### 服務端
-- [context參數](https://nuxtjs.org/docs/internals-glossary/context/)
+- [服務端的上下文-context參數](https://nuxtjs.org/docs/internals-glossary/context/)
 - 在服務端生命週期中無法拿到客戶端訊息(如:window)
 - 在component元件中不會執行asyncData、middleware、validate
 ---
 
 #### 加入keep alive
+
+- 
 
 ---
 #### 參考資料

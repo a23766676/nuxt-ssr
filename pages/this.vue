@@ -8,17 +8,35 @@
 export default {
   name: "thisPage",
   layout: "none",
+  data() {
+    return {
+        a: 'a'
+    }
+  },
+   middleware(context) {
+    console.log('middleware_'+this)
+  },
+
+  // 參數的有效性
+  validate(context) {
+    console.log('validate_'+this)
+    // console.log(this)
+    // console.log(this.data())
+    return true;
+  },
   asyncData() {
-    console.log(this)
+    console.log('asyncData_'+this)
   },
   fetch() {
-    console.log(this)
+    console.log('fetch_'+this)
+    // console.log(this)
+    // console.log(this.a)
   },
   created() {
-    console.log(this);
+    console.log('created_'+this);
   },
   mounted (){
-    console.log(this);
+    console.log('mounted_'+this);
   },
 };
 </script>
