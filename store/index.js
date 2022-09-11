@@ -3,7 +3,7 @@ export const actions = {
   //這個 hook 會擁有 store實例 & context上下文
   nuxtServerInit(store,context){
       //初始化東西到store中
-      console.log('nuxtServerInit');
+      // console.log('nuxtServerInit');
   }
   //重啟後可以看到
 }
