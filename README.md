@@ -42,8 +42,8 @@ Tina
 ---
 
 #### asyncData與fetch
-- asyncData return 出來的 data 會 取代原本的 data() 
 - asyncData執行完才會往下執行created、fetch
+- asyncData return 出來的 data 會 取代原本的 data() 
 - asyncData無法取得this，created、fetch可以
 - 第一次載入伺服器端都會等asyncData及fetch兩個函式都跑完才顯示畫面
 - 但如果是用NUXT-LINK轉頁，就可以明顯看見asyncData跑完才會顯示畫面，但fetch則是先進入畫面後等待非同步結束再把資料渲染出來
