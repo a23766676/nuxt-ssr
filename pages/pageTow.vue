@@ -2,12 +2,6 @@
    <div>
     nextPage
     <br />
-    asyncData:{{ asyncData.name }}
-    <br />
-    fetchData:{{ fetchData.name }}
-    <br />
-    createdData:{{ createdData.name }}
-    <br />
     <br />
     <div>
       <span>a標籤:</span>
@@ -37,9 +31,8 @@ export default {
   name: "pageTow",
   layout: 'none',
   async asyncData() {
-    const data = await getData(5000);
-    console.log("pageTwo_asyncData" + new Date());
-    return { asyncData: data };
+    console.log("pageTwo_asyncData");
+    return { };
   },
   data() {
     return {
@@ -48,13 +41,11 @@ export default {
     };
   },
   async fetch() {
-    this.fetchData = await getData(3000);
     // eslint-disable-next-line no-console
     console.log("pageTow_fetch");
     // 有keep alive且共用layout就不會進到fetch
   },
   async created() {
-    this.createdData = await getData(5000);
     // eslint-disable-next-line no-console
     console.log("pageTow_created");
   },
