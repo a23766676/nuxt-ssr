@@ -55,7 +55,7 @@ Tina
 #### created
 
 - created及beforeCreate會在伺服器端及客戶端各執行一次，共兩次
-- created是否會在後端渲染會看它非同步完成的時間是否於fetch之前或同時結束
+- 若created有非同步的操作，是否會在後端渲染會看它非同步完成的時間是否於fetch之前
 
 ---
 
@@ -63,6 +63,7 @@ Tina
 - [服務端的上下文-context參數](https://nuxtjs.org/docs/internals-glossary/context/)
 - 在服務端生命週期中無法拿到客戶端訊息(如:window)
 - 在component元件中不會執行asyncData、middleware、validate
+
 ---
 
 #### 加入keep alive
