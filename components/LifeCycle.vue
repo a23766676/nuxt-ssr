@@ -15,9 +15,8 @@ export default {
   name: "LifeCycle",
   // 只能放在頁面組件上
   async asyncData() {
-    const data = await getData(5000);
-    console.log("component_asyncData" + new Date());
-    return { asyncData: data };
+    console.log("component_asyncData");
+    return {  };
   },
   middleware() {
     console.log("component_middleware");
@@ -33,19 +32,13 @@ export default {
     };
   },
   async fetch() {
-    this.fetchData = await getData(5000);
-    // eslint-disable-next-line no-console
-    console.log("component_fetch" + new Date());
-    // 有keep alive且共用layout就不會進到fetch
+    console.log("component_fetch");
   },
   beforeCreate() {
-    console.log("component_beforeCreate" + new Date());
+    console.log("component_beforeCreate" );
   },
   async created() {
-    console.log("component_created" + new Date());
-    this.createdData = await getData(5000);
-    // eslint-disable-next-line no-console
-    console.log("component_created" + new Date());
+    console.log("component_created" );
   },
   beforeMount() {
     console.log("component_beforeMount");

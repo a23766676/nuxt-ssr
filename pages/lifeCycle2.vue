@@ -1,20 +1,11 @@
 <template>
   <div>
-    生命週期
-    <LifeCycle />
-    <nuxt-link to="/lifeCycle2">lifeCycle2</nuxt-link>
+    生命週期2
+    <nuxt-link to="/lifeCycle">lifeCycle</nuxt-link>
   </div>
 </template>
 
 <script>
-  import LifeCycle from '../components/LifeCycle.vue';
-// eslint-disable-next-line promise/param-names
-const getData = (t) =>
-  new Promise((resovle) => {
-    setTimeout(() => {
-      resovle({ name: new Date()});
-    }, t);
-  });
 export default {
   name: "IndexPage",
   layout: "defaultLayout",
@@ -22,10 +13,10 @@ export default {
     console.log("page_asyncData");
     return { };
   },
-  // middleware:'auth',
-  middleware(context) {
-    console.log("page_middleware");
-  },
+  middleware:'auth',
+  // middleware(context) {
+  //   console.log("page_middleware");
+  // },
 
   // 參數的有效性
   validate(context) {
@@ -61,8 +52,5 @@ export default {
   async mounted (){
     console.log("page_mounted");
   },
-  components:{
-    LifeCycle
-  }
 };
 </script>

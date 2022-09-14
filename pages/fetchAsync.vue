@@ -40,7 +40,6 @@ export default {
     };
   },
   async fetch() {
-    console.log(this);
     console.log("startfetch_"+ new Date());
     this.fetchData = await getData(3000);
     console.log("fetchData_" + new Date());
