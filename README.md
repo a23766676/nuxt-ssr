@@ -1,6 +1,3 @@
----
-marp: true
----
 ## Nuxt SSR 與 生命週期
 
 Tina
