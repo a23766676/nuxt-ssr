@@ -32,6 +32,9 @@ export default {
     // console.log(this)
     // console.log(this.a)
   },
+  beforeCreate() {
+    console.log('beforeCreate_'+this);
+  },
   created() {
     console.log('created_'+this);
   },
