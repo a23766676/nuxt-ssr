@@ -1,9 +1,12 @@
 <template>
-  <div>
+<div v-if=$fetchState.error>error</div>
+  <div v-else>
     <br />
     asyncData:{{ asyncData.name }}
     <br />
     fetchData:{{ fetchData.name }}
+    <br />
+    createdData:{{ createdData.name }}
     <br />
     <nuxt-link to="../fetchLoading">fetchLoading</nuxt-link>
   </div>
@@ -25,10 +28,12 @@ export default {
   name: "IndexPage",
   layout: 'none',
   async asyncData() {
-    const data = await getData(2000);
+    console.log("startasyncData_"+ new Date());
+    // const data = await getData(2000);
     // const data = await getError(10);
     console.log("asyncData_" + new Date());
-    return { asyncData: data };
+    // return { asyncData: data} ;
+    return { };
   },
   data() {
     return {
@@ -40,10 +45,15 @@ export default {
     };
   },
   async fetch() {
-    console.log(this);
     console.log("startfetch_"+ new Date());
+    // const data = await getError(10);
     this.fetchData = await getData(3000);
-    console.log("fetchData_" + new Date());
+    console.log("endfetch_" + new Date());
+  },
+  async created() {
+    console.log("startcreated_"+ new Date());
+    this.createdData = await getData(3000);
+    console.log("endcreated_" + new Date());
   },
 };
 </script>
