@@ -19,6 +19,7 @@ export default {
   name: "IndexPage",
   layout: "defaultLayout",
   async asyncData() {
+    console.log('print:'+this);
     console.log("page_asyncData");
     return { };
   },
