@@ -1,7 +1,10 @@
 export default {
   // ssr:false,
   router: {
-    middleware: ['default']
+    middleware: ['default'],
+    // middleware(){
+    //   console.log('aaa')
+    // }
   },
   serverMiddleware:['~/server-middleware/logger',
 { path: '/pageTow', handler: '~/server-middleware/pageTow.js' }],
