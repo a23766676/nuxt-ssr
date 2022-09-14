@@ -9,10 +9,13 @@ Tina
 
 #### 為何選這個主題
 ---
+##
 
 ![](https://i.imgur.com/EiTn2I7.png)
 
 ---
+
+##
 
 ![](https://i.imgur.com/xHimAbn.png)
 
@@ -67,7 +70,9 @@ Tina
 
 #### 加入keep alive
 
-- 
+- 無destroyed
+- 第二次進入相同畫面時，不會觸發created及fetch
+- 一樣可使用activated及deactivated
 
 ---
 #### 參考資料
