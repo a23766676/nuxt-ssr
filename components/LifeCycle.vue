@@ -1,6 +1,6 @@
 <template>
   <div>
-  
+  <!-- {{asyncData}} -->
   </div>
 </template>
 
@@ -16,7 +16,7 @@ export default {
   // 只能放在頁面組件上
   async asyncData() {
     console.log("component_asyncData");
-    return {  };
+    return { asyncData:'aaa' };
   },
   middleware() {
     console.log("component_middleware");
