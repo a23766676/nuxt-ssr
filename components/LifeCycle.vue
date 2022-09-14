@@ -1,12 +1,6 @@
 <template>
   <div>
-    元件
-    <br />
-    <!-- asyncData:{{asyncData.name}} -->
-    <br />
-    fetchData:{{ fetchData.name }}
-    <br />
-    createdData:{{ createdData.name }}
+  
   </div>
 </template>
 
