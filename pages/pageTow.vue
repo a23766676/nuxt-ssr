@@ -37,8 +37,8 @@ export default {
   name: "pageTow",
   layout: 'none',
   async asyncData() {
-    const data = await getData(5000);
-    console.log("pageTwo_asyncData" + new Date());
+    const data = await getData(3000);
+    console.log("pageTwo_asyncData");
     return { asyncData: data };
   },
   data() {
@@ -48,13 +48,13 @@ export default {
     };
   },
   async fetch() {
-    this.fetchData = await getData(3000);
+    this.fetchData = await getData(1000);
     // eslint-disable-next-line no-console
     console.log("pageTow_fetch");
     // 有keep alive且共用layout就不會進到fetch
   },
   async created() {
-    this.createdData = await getData(5000);
+    this.createdData = await getData(2000);
     // eslint-disable-next-line no-console
     console.log("pageTow_created");
   },
