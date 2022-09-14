@@ -3,6 +3,8 @@ export default {
   router: {
     middleware: ['default']
   },
+  serverMiddleware:['~/server-middleware/logger',
+{ path: '/pageTow', handler: '~/server-middleware/pageTow.js' }],
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: 'nuxt-ssr',
